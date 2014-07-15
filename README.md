@@ -1,0 +1,4 @@
+ng-prestashop
+=============
+
+AngularJS + PrestaShop
