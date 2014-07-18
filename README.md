@@ -1,4 +1,4 @@
-ng-prestashop
+angular-prestashop
 =============
 
-AngularJS + PrestaShop
+A great starting point for writing Prestashop Addons based on AngularJS
