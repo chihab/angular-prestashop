@@ -15,7 +15,7 @@ cd angular/views
 bower install
 ```
 ## Configuration
-Indicate BaseUrl to angular
+Indicate BaseUrl to angular on angular/views/js/services.js:
 ```javascript
    prestashopProvider.setBaseUrl('/admin-dev/index.php');
 ```
