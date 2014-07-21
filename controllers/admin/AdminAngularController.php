@@ -2,7 +2,7 @@
 
 class AdminAngularController extends ModuleAdminController
 {
-    public $_path = null;
+    protected $_path = null;
 
     public function __construct()
     {
@@ -65,6 +65,7 @@ class AdminAngularController extends ModuleAdminController
             $this->_path . 'views/vendor/angular-route/angular-route.min.js',
             $this->_path . 'views/vendor/angular-bootstrap/ui-bootstrap.min.js',
             $this->_path . 'views/vendor/angular-bootstrap/ui-bootstrap-tpls.min.js',
+            $this->_path . 'views/vendor/angular-md5/angular-md5.min.js'
         ));
 
         if (version_compare(_PS_VERSION_, '1.6', '<')) {

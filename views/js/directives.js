@@ -1,5 +1,5 @@
 angular.module('angular-prestashop')
-    .directive('widgetValue',function () {
+    .directive('widgetValue', function () {
         return {
             restrict: 'E',
             scope: {
@@ -7,4 +7,4 @@ angular.module('angular-prestashop')
             },
             template: '{{value}}'
         };
-    })
+    });

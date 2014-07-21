@@ -14,10 +14,10 @@ angular.module('ngPrestashop', [])
 
         this.setParams = function (_params) {
             params = _params;
-        }
+        };
         this.setBaseUrl = function (_baseUrl) {
             baseUrl = _baseUrl;
-        }
+        };
         this.$get = ["$http", function ($http) {
             return {
                 get: function (_params) {
@@ -30,7 +30,7 @@ angular.module('ngPrestashop', [])
         }];
     });
 
-angular.module('angular-prestashop', ['ngPrestashop', 'ngRoute'])
+angular.module('angular-prestashop', ['ngPrestashop', 'ngRoute', 'angular-md5'])
     .config(function ($interpolateProvider, $routeProvider, prestashopProvider) {
 
         $interpolateProvider.startSymbol('//');
@@ -61,4 +61,4 @@ angular.module('angular-prestashop', ['ngPrestashop', 'ngRoute'])
                 }
             };
         }];
-    })
+    });
