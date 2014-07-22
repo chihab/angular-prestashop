@@ -1,30 +1,16 @@
 angular.module('ngPrestashop', [])
     .provider('prestashop', function prestashopProvider() {
-        var params = null;
-        var baseUrl = null;
-
-        function addParams(source, _params) {
-            var __params = {};
-            __params = angular.copy(source, __params);
-            for (var param in _params) {
-                __params[param] = _params[param];
-            }
-            return __params;
-        }
-
+        var params = {};
         this.setParams = function (_params) {
             params = _params;
-        };
-        this.setBaseUrl = function (_baseUrl) {
-            baseUrl = _baseUrl;
         };
         this.$get = ["$http", function ($http) {
             return {
                 get: function (_params) {
-                    return $http.get(baseUrl, {'params': addParams(params, _params)})
+                    return $http.get(location.pathname, {'params': $.extend(true, {}, params, _params)})
                 },
                 post: function (_params, body) {
-                    return $http.post(baseUrl, body, {'params': addParams(params, _params)})
+                    return $http.post(location.pathname, body, {'params': $.extend(true, {}, params, _params)})
                 }
             }
         }];
@@ -47,8 +33,6 @@ angular.module('angular-prestashop', ['ngPrestashop', 'ngRoute', 'angular-md5'])
             'controller': 'AdminAngular',
             'token': ctrl_token
         });
-        prestashopProvider.setBaseUrl('/admin-dev/index.php');
-
     })
     .provider('configuration', function ConfigurationProvider() {
         this.$get = ["$http", "prestashop", function ($http, prestashop) {
