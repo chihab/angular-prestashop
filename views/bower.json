@@ -23,6 +23,7 @@
         "angular": "latest",
         "bootstrap": "latest",
         "angular-bootstrap": "latest",
-        "angular-route": "latest"
+        "angular-route": "latest",
+        "angular-md5": "latest"
     }
 }
